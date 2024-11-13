@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Receitas do Yanzinho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="receitas.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Receitas do Yanzinho</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Receitas Deliciosas e Simples de Fazer</h1>
+            <p>Explore as receitas que preparamos para você. Clique nas receitas abaixo para aprender o passo a passo de cada prato.</p>
+        </section>
+
+        <div class="receitas-container">
+            <div class="receita" onclick="openModal(1)">
+                <img src="https://via.placeholder.com/300" alt="Bolo de Chocolate">
+                <h2>Bolo de Chocolate</h2>
+            </div>
+            <div class="receita" onclick="openModal(2)">
+                <img src="https://via.placeholder.com/300" alt="Pizza Caseira">
+                <h2>Pizza Caseira</h2>
+            </div>
+            <div class="receita" onclick="openModal(3)">
+                <img src="https://via.placeholder.com/300" alt="Salada de Frutas">
+                <h2>Salada de Frutas</h2>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal(1)">&times;</span>
+                <h2>Bolo de Chocolate</h2>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>2 xícaras de farinha de trigo</li>
+                    <li>1 xícara de açúcar</li>
+                    <li>1 xícara de chocolate em pó</li>
+                    <li>3 ovos</li>
+                    <li>1/2 xícara de leite</li>
+                </ul>
+                <h3>Modo de Preparo:</h3>
+                <p>Misture todos os ingredientes até obter uma massa homogênea. Coloque em uma forma untada e leve ao forno por 30 minutos a 180°C.</p>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal(2)">&times;</span>
+                <h2>Pizza Caseira</h2>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>2 xícaras de farinha de trigo</li>
+                    <li>1/2 xícara de água</li>
+                    <li>1 colher de sopa de fermento</li>
+                    <li>1 colher de sopa de azeite</li>
+                    <li>Molho de tomate</li>
+                    <li>Queijo e presunto</li>
+                </ul>
+                <h3>Modo de Preparo:</h3>
+                <p>Prepare a massa, deixe descansar por 30 minutos. Abra a massa, adicione molho, queijo e presunto e leve ao forno por 20 minutos.</p>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal(3)">&times;</span>
+                <h2>Salada de Frutas</h2>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>1 banana</li>
+                    <li>1 maçã</li>
+                    <li>1 laranja</li>
+                    <li>1 fatia de melão</li>
+                    <li>Mel a gosto</li>
+                </ul>
+                <h3>Modo de Preparo:</h3>
+                <p>Corte todas as frutas em cubos e misture. Regue com mel e sirva imediatamente.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Receitas do Yanzinho. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para abrir o modal
+        function openModal(modalNum) {
+            var modal = document.getElementById("modal" + modalNum);
+            modal.style.display = "flex";
+        }
+
+        // Função para fechar o modal
+        function closeModal(modalNum) {
+            var modal = document.getElementById("modal" + modalNum);
+            modal.style.display = "none";
+        }
+
+        // Fechar o modal se o usuário clicar fora da janela
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(1);
+                closeModal(2);
+                closeModal(3);
+            }
+        }
+    </script>
+</body>
+</html>
